@@ -65,6 +65,15 @@ class CommandData
 		$this->modelNamePluralCamel = Str::camel($this->modelNamePlural);
 		$this->modelNamespace = Config::get('generator.namespace_model', 'App') . "\\" . $this->modelName;
 
+		$this->groupName = strtolower($this->commandObj->ask("Group:"));
+		if ($this->groupName) {
+			$this->groupModelName = ucfirst($this->groupName) . '\\' . $this->modelName;
+			$this->groupModelNamePluralCamel = $this->groupName . '.' . $this->modelNamePluralCamel;
+		} else {
+			$this->groupModelNamePluralCamel = $this->modelNamePluralCamel;
+			$this->groupModelName = $this->modelName;
+		}
+
 		$this->modelConnection = $this->commandObj->ask("DB_CONNECTION:");
 		if (empty($this->modelConnection)) {
 			$this->commandObj->error("我死了！");

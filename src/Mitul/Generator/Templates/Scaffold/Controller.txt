@@ -3,12 +3,12 @@
 use App\Http\Requests;
 use $REQUEST_NAMESPACE$\Create$MODEL_NAME$Request;
 use $MODEL_NAMESPACE$;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller as BaseController;
 use App\Http\Requests\SearchRequest;
 
 use Flash, Response;
 
-class $MODEL_NAME$Controller extends Controller
+class $MODEL_NAME$Controller extends BaseController
 {
 
 	/**
@@ -18,7 +18,7 @@ class $MODEL_NAME$Controller extends Controller
 	 */
 	public function index(SearchRequest $request)
 	{
-		return view('$MODEL_NAME_PLURAL_CAMEL$.index', array_merge($request->getInputs(), [
+		return view('$GROUP_MODEL_NAME_PLURAL_CAMEL$.index', array_merge($request->getInputs(), [
 			'searchables' => $MODEL_NAME$::getSearchable(),
 			'$MODEL_NAME_PLURAL_CAMEL$' => $MODEL_NAME$::search($request->getInputs())->orderBy('id', 'desc')->paginate(20),
 		]));
@@ -31,7 +31,7 @@ class $MODEL_NAME$Controller extends Controller
 	 */
 	public function create()
 	{
-		return view('$MODEL_NAME_PLURAL_CAMEL$.create');
+		return view('$GROUP_MODEL_NAME_PLURAL_CAMEL$.create');
 	}
 
 	/**
@@ -49,7 +49,7 @@ class $MODEL_NAME$Controller extends Controller
 
 		Flash::message('$MODEL_NAME$ saved successfully.');
 
-		return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+		return redirect(route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.index'));
 	}
 
 	/**
@@ -66,10 +66,10 @@ class $MODEL_NAME$Controller extends Controller
 		if(empty($$MODEL_NAME_CAMEL$))
 		{
 			Flash::error('$MODEL_NAME$ not found');
-			return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+			return redirect(route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.index'));
 		}
 
-		return view('$MODEL_NAME_PLURAL_CAMEL$.show', [
+		return view('$GROUP_MODEL_NAME_PLURAL_CAMEL$.show', [
 			'$MODEL_NAME_CAMEL$' => $$MODEL_NAME_CAMEL$,
 		]);
 	}
@@ -87,10 +87,10 @@ class $MODEL_NAME$Controller extends Controller
 		if(empty($$MODEL_NAME_CAMEL$))
 		{
 			Flash::error('$MODEL_NAME$ not found');
-			return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+			return redirect(route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.index'));
 		}
 
-		return view('$MODEL_NAME_PLURAL_CAMEL$.edit', [
+		return view('$GROUP_MODEL_NAME_PLURAL_CAMEL$.edit', [
 			'$MODEL_NAME_CAMEL$' => $$MODEL_NAME_CAMEL$,
 		]);
 	}
@@ -111,7 +111,7 @@ class $MODEL_NAME$Controller extends Controller
 		if(empty($$MODEL_NAME_CAMEL$))
 		{
 			Flash::error('$MODEL_NAME$ not found');
-			return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+			return redirect(route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.index'));
 		}
 
 		$$MODEL_NAME_CAMEL$->fill($request->all());
@@ -119,7 +119,7 @@ class $MODEL_NAME$Controller extends Controller
 
 		Flash::message('$MODEL_NAME$ updated successfully.');
 
-		return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+		return redirect(route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.index'));
 	}
 
 	/**
@@ -137,14 +137,14 @@ class $MODEL_NAME$Controller extends Controller
 		if(empty($$MODEL_NAME_CAMEL$))
 		{
 			Flash::error('$MODEL_NAME$ not found');
-			return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+			return redirect(route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.index'));
 		}
 
 		$$MODEL_NAME_CAMEL$->delete();
 
 		Flash::message('$MODEL_NAME$ deleted successfully.');
 
-		return redirect(route('$MODEL_NAME_PLURAL_CAMEL$.index'));
+		return redirect(route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.index'));
 	}
 
 }

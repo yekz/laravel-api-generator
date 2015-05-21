@@ -14,7 +14,7 @@
 
                 <div class="btn-group btn-group-sm">
                     <div class="block-options pull-right">
-                        <a href="{!! route('$MODEL_NAME_PLURAL_CAMEL$.create') !!}" class="btn btn-alt btn-sm btn-success" data-toggle="tooltip" title="" data-original-title="New"><i class="hi hi-plus"></i></a>
+                        <a href="{!! route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.create') !!}" class="btn btn-alt btn-sm btn-success" data-toggle="tooltip" title="" data-original-title="New"><i class="hi hi-plus"></i></a>
                     </div>
                 </div>
             </div>
@@ -41,9 +41,9 @@
                                     $FIELD_BODY$
                                     <td class="text-right">
                                     <div class="btn-group btn-group-xs">
-                                            <a href="{!! route('$MODEL_NAME_PLURAL_CAMEL$.show', [$$MODEL_NAME_CAMEL$->id]) !!}" data-toggle="tooltip" data-original-title="View" class="btn btn-default"><i class="hi hi-eye-open"></i></a>
-                                            <a href="{!! route('$MODEL_NAME_PLURAL_CAMEL$.edit', [$$MODEL_NAME_CAMEL$->id]) !!}" data-toggle="tooltip" data-original-title="Edit" class="btn btn-default"><i class="gi gi-edit"></i></a>
-                                            <a href="#" onclick="X.Info.confirm('Are you sure wants to delete this GmailError?', function(){window.location.href='{!! route('$MODEL_NAME_PLURAL_CAMEL$.delete', [$$MODEL_NAME_CAMEL$->id]) !!}'})" data-toggle="tooltip" data-original-title="Delete" class="btn btn-default"><i class="gi gi-remove text-danger"></i></a>
+                                            <a href="{!! route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.show', [$$MODEL_NAME_CAMEL$->id]) !!}" data-toggle="tooltip" data-original-title="View" class="btn btn-default"><i class="hi hi-eye-open"></i></a>
+                                            <a href="{!! route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.edit', [$$MODEL_NAME_CAMEL$->id]) !!}" data-toggle="tooltip" data-original-title="Edit" class="btn btn-default"><i class="gi gi-edit"></i></a>
+                                            <a href="#" onclick="X.Info.confirm('Are you sure wants to delete this GmailError?', function(){window.location.href='{!! route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.delete', [$$MODEL_NAME_CAMEL$->id]) !!}'})" data-toggle="tooltip" data-original-title="Delete" class="btn btn-default"><i class="gi gi-remove text-danger"></i></a>
                                         </div>
                                     </td>
                                 </tr>

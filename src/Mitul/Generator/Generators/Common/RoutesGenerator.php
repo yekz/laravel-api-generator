@@ -56,8 +56,11 @@ class RoutesGenerator implements GeneratorProvider
 
 	private function fillTemplate($templateData)
 	{
+		$templateData = str_replace('$GROUP_NAME$', $this->commandData->groupName . '/', $templateData);
 		$templateData = str_replace('$MODEL_NAME$', $this->commandData->modelName, $templateData);
+		$templateData = str_replace('$GROUP_MODEL_NAME$', $this->commandData->groupModelName, $templateData);
 		$templateData = str_replace('$MODEL_NAME_PLURAL_CAMEL$', $this->commandData->modelNamePluralCamel, $templateData);
+		$templateData = str_replace('$GROUP_MODEL_NAME_PLURAL_CAMEL$', $this->commandData->groupModelNamePluralCamel, $templateData);
 
 		return $templateData;
 	}

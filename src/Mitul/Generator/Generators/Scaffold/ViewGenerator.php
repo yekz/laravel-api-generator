@@ -25,7 +25,7 @@ class ViewGenerator implements GeneratorProvider
 	function __construct($commandData)
 	{
 		$this->commandData = $commandData;
-		$this->path = Config::get('generator.path_views', base_path('resources/views')) . '/' . $this->commandData->modelNamePluralCamel . '/';
+		$this->path = Config::get('generator.path_views', base_path('resources/views')) . '/' . Str::camel($this->commandData->modelNamePlural) . '/';
 		$this->viewsPath = "Scaffold/Views";
 	}
 
@@ -95,6 +95,8 @@ class ViewGenerator implements GeneratorProvider
 
 		if ( ! $this->commandData->viewDateranger) {
 			$templateData = str_replace('$VIEW_USE_DATERANGER$', ", ['disableDate' => true]", $templateData);
+		} else {
+			$templateData = str_replace('$VIEW_USE_DATERANGER$', "", $templateData);
 		}
 
 		$tableBodyFields = trim($tableBodyFields);
@@ -156,6 +158,7 @@ class ViewGenerator implements GeneratorProvider
 
 		$templateData = str_replace('$MODEL_NAME_CAMEL$', $this->commandData->modelNameCamel, $templateData);
 		$templateData = str_replace('$MODEL_NAME_PLURAL_CAMEL$', $this->commandData->modelNamePluralCamel, $templateData);
+		$templateData = str_replace('$GROUP_MODEL_NAME_PLURAL_CAMEL$', $this->commandData->groupModelNamePluralCamel, $templateData);
 
 		return $templateData;
 	}

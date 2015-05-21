@@ -62,6 +62,7 @@ class RepoViewControllerGenerator implements GeneratorProvider
 
 		$templateData = str_replace('$MODEL_NAME_CAMEL$', $this->commandData->modelNameCamel, $templateData);
 		$templateData = str_replace('$MODEL_NAME_PLURAL_CAMEL$', $this->commandData->modelNamePluralCamel, $templateData);
+		$templateData = str_replace('$GROUP_MODEL_NAME_PLURAL_CAMEL$', $this->commandData->groupModelNamePluralCamel, $templateData);
 
 		return $templateData;
 	}

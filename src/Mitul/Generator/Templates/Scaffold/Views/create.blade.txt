@@ -13,9 +13,9 @@
 
             @include('common.errors')
 
-            {!! Form::open(['route' => '$MODEL_NAME_PLURAL_CAMEL$.store', 'method' => 'post', 'class' => 'form-horizontal form-bordered']) !!}
+            {!! Form::open(['route' => '$GROUP_MODEL_NAME_PLURAL_CAMEL$.store', 'method' => 'post', 'class' => 'form-horizontal form-bordered']) !!}
 
-                @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
+                @include('$GROUP_MODEL_NAME_PLURAL_CAMEL$.fields')
 
             {!! Form::close() !!}
         </div>

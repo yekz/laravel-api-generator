@@ -6,6 +6,11 @@ https://github.com/mitulgolakiya/laravel-api-generator
 
 # 使用
 
+## 配置
+
+在 .env 文件配置分组，留空则不分组
+`CURD_GROUP=xxx`
+
 ## php artisan
 
 命令行执行
@@ -26,6 +31,8 @@ php artisan mitul.generator:scaffold ModelName
 
 #然后有几个问题(直接空格就是 N)：
 
+# 分组，配合 .env 的配置使用，应当和配置值一样（你问我为什么两个配置，我还没想到怎么省略）
+Group: gmail
 # 数据库连接
 DB_CONNECTION: gmail
 # 表名称
