@@ -39,8 +39,8 @@
                                 <tr>
                                     <td class='text-left'>{{ $$MODEL_NAME_CAMEL$->id }}</td>
                                     $FIELD_BODY$
-                                    <td class="text-right">
-                                    <div class="btn-group btn-group-xs">
+                                    <td style="width:90px;" class="text-right">
+                                        <div class="btn-group btn-group-xs">
                                             <a href="{!! route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.show', [$$MODEL_NAME_CAMEL$->id]) !!}" data-toggle="tooltip" data-original-title="View" class="btn btn-default"><i class="hi hi-eye-open"></i></a>
                                             <a href="{!! route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.edit', [$$MODEL_NAME_CAMEL$->id]) !!}" data-toggle="tooltip" data-original-title="Edit" class="btn btn-default"><i class="gi gi-edit"></i></a>
                                             <a href="#" onclick="X.Info.confirm('Are you sure wants to delete this GmailError?', function(){window.location.href='{!! route('$GROUP_MODEL_NAME_PLURAL_CAMEL$.delete', [$$MODEL_NAME_CAMEL$->id]) !!}'})" data-toggle="tooltip" data-original-title="Delete" class="btn btn-default"><i class="gi gi-remove text-danger"></i></a>
