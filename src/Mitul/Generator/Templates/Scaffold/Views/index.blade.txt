@@ -54,7 +54,7 @@
             @endif
         </div>
         <div class="col-md-12">
-            <span class="pull-right">{!! $$MODEL_NAME_PLURAL_CAMEL$->render() !!}</span>
+            <span class="pull-right">{!! $$MODEL_NAME_PLURAL_CAMEL$->appends(Input::all())->render() !!}</span>
         </div>
     </div>
 </div>
